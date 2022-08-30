@@ -82,27 +82,16 @@ ROS_SYSROOT_BUILD_DEPENDENCIES = " \
     libyaml-vendor \
 "
 
+PUT_PACKAGES = " \
+    packagegroup-core-buildessential \
+    python3-opencv \
+    python3-rosdep \
+    python3-pip \
+    python3-colcon-common-extensions \
+"
+
 IMAGE_INSTALL:append = " \
     ros-base \
-    examples-rclcpp-minimal-action-client \
-    examples-rclcpp-minimal-action-server \
-    examples-rclcpp-minimal-client \
-    examples-rclcpp-minimal-composition \
-    examples-rclcpp-minimal-publisher \
-    examples-rclcpp-minimal-service \
-    examples-rclcpp-minimal-subscriber \
-    examples-rclcpp-minimal-timer \
-    examples-rclcpp-multithreaded-executor \
-    examples-rclpy-executors \
-    examples-rclpy-minimal-action-client \
-    examples-rclpy-minimal-action-server \
-    examples-rclpy-minimal-client \
-    examples-rclpy-minimal-publisher \
-    examples-rclpy-minimal-service \
-    examples-rclpy-minimal-subscriber \
-    demo-nodes-cpp \
-    demo-nodes-cpp-rosnative \
-    demo-nodes-py \
     cyclonedds \
     rmw-cyclonedds-cpp \
     tmux \
@@ -118,6 +107,7 @@ IMAGE_INSTALL:append = " \
     opencl-headers-dev \
     opencl-clhpp-dev \
     ${ROS_SYSROOT_BUILD_DEPENDENCIES} \
+    ${PUT_PACKAGES} \
 "
 
 IMAGE_LINGUAS = "en-us"
