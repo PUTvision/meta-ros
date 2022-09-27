@@ -86,6 +86,7 @@ PUT_PACKAGES = " \
     packagegroup-core-buildessential \
     python3-opencv \
     python3-rosdep \
+    python3-rospkg \
     python3-pip \
     python3-colcon-common-extensions \
 "
