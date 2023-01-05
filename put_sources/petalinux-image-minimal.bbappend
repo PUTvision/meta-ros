@@ -5,6 +5,7 @@ DESCRIPTION = "${SUMMARY}"
 
 inherit ros_distro_${ROS_DISTRO}
 inherit ${ROS_DISTRO_TYPE}_image
+inherit ros_ament_cmake
 
 ROS_SYSROOT_BUILD_DEPENDENCIES = " \
     ament-lint-auto \
@@ -82,6 +83,27 @@ ROS_SYSROOT_BUILD_DEPENDENCIES = " \
     libyaml-vendor \
 "
 
+DEPTHAI_PACKAGES = " \
+    depthai-core \
+    depthai-ros-examples \
+"
+
+HUSKY_PACKAGES = " \
+    robot-localization \
+    controller-manager \
+    robot-upstart \
+    joy \
+    interactive-marker-twist-server \
+    twist-mux \
+    teleop-twist-joy \
+    husky-base \
+    husky-bringup \
+    husky-control \
+    husky-description \
+    ros2-control \
+    ros2-controllers \
+    "
+
 PUT_PACKAGES = " \
     packagegroup-core-buildessential \
     python3-opencv \
@@ -89,6 +111,9 @@ PUT_PACKAGES = " \
     python3-rospkg \
     python3-pip \
     python3-colcon-common-extensions \
+    bashrc \
+    ${HUSKY_PACKAGES} \
+    ${DEPTHAI_PACKAGES} \
 "
 
 IMAGE_INSTALL:append = " \
