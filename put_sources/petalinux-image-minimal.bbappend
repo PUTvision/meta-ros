@@ -83,6 +83,10 @@ ROS_SYSROOT_BUILD_DEPENDENCIES = " \
     libyaml-vendor \
 "
 
+XSENSE_PACKAGES = " \
+    xsens \
+"
+
 DEPTHAI_PACKAGES = " \
     depthai-core \
     depthai-ros-examples \
@@ -102,6 +106,8 @@ HUSKY_PACKAGES = " \
     husky-description \
     ros2-control \
     ros2-controllers \
+    imu-filter-madgwick \
+    imu-complementary-filter \
     "
 
 PUT_PACKAGES = " \
@@ -111,12 +117,16 @@ PUT_PACKAGES = " \
     python3-rospkg \
     python3-pip \
     python3-colcon-common-extensions \
-    bashrc \
     ${HUSKY_PACKAGES} \
     ${DEPTHAI_PACKAGES} \
+    ${XSENSE_PACKAGES} \
+    depthai-cognition \
+    put-husky-description \
+    bashrc \
 "
 
 IMAGE_INSTALL:append = " \
+    bash \
     ros-base \
     cyclonedds \
     rmw-cyclonedds-cpp \
